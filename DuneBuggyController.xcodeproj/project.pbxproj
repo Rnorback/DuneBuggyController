@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		93E8D9C41C0B71D600598A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E8D9C31C0B71D600598A3C /* AppDelegate.swift */; };
-		93E8D9C61C0B71D600598A3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E8D9C51C0B71D600598A3C /* ViewController.swift */; };
 		93E8D9C91C0B71D600598A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E8D9C71C0B71D600598A3C /* Main.storyboard */; };
 		93E8D9CB1C0B71D600598A3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93E8D9CA1C0B71D600598A3C /* Assets.xcassets */; };
 		93E8D9CE1C0B71D600598A3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93E8D9CC1C0B71D600598A3C /* LaunchScreen.storyboard */; };
+		93E8D9D61C0B750600598A3C /* DuneBuggyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E8D9D51C0B750600598A3C /* DuneBuggyVC.swift */; };
+		93E8D9D91C0BC71700598A3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E8D9D81C0BC71700598A3C /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		93E8D9C01C0B71D600598A3C /* DuneBuggyController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuneBuggyController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93E8D9C31C0B71D600598A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		93E8D9C51C0B71D600598A3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		93E8D9C81C0B71D600598A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93E8D9CA1C0B71D600598A3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		93E8D9CD1C0B71D600598A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93E8D9CF1C0B71D600598A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93E8D9D51C0B750600598A3C /* DuneBuggyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuneBuggyVC.swift; sourceTree = "<group>"; };
+		93E8D9D81C0BC71700598A3C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +57,9 @@
 			isa = PBXGroup;
 			children = (
 				93E8D9C31C0B71D600598A3C /* AppDelegate.swift */,
-				93E8D9C51C0B71D600598A3C /* ViewController.swift */,
 				93E8D9C71C0B71D600598A3C /* Main.storyboard */,
+				93E8D9D51C0B750600598A3C /* DuneBuggyVC.swift */,
+				93E8D9D81C0BC71700598A3C /* Constants.swift */,
 				93E8D9CA1C0B71D600598A3C /* Assets.xcassets */,
 				93E8D9CC1C0B71D600598A3C /* LaunchScreen.storyboard */,
 				93E8D9CF1C0B71D600598A3C /* Info.plist */,
@@ -135,8 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93E8D9C61C0B71D600598A3C /* ViewController.swift in Sources */,
+				93E8D9D61C0B750600598A3C /* DuneBuggyVC.swift in Sources */,
 				93E8D9C41C0B71D600598A3C /* AppDelegate.swift in Sources */,
+				93E8D9D91C0BC71700598A3C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
