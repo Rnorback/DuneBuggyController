@@ -20,6 +20,7 @@ class DuneBuggyVC: UIViewController, CBCentralManagerDelegate, CBPeripheralDeleg
     var centralManager:CBCentralManager!
     var blackWidow:CBPeripheral!
     var keepScanning:Bool = true
+    var blackWidowCharWrite:CBCharacteristic?
     
     let TIMER_SCAN_INTERVAL = 2.0
     let TIMER_WAIT_INTERVAL = 10.0
@@ -53,7 +54,11 @@ class DuneBuggyVC: UIViewController, CBCentralManagerDelegate, CBPeripheralDeleg
                 sender.setValue(0, animated: true)
             }, completion: nil)
         
-        
+        if let characteristic = blackWidowCharWrite {
+            var motorValue:UInt8 = UInt8(leftSlider.value)
+            let motorBytes = NSData(bytes: &motorValue, length: sizeof(UInt8))
+            blackWidow.writeValue(motorBytes, forCharacteristic: characteristic, type: .WithResponse)
+        }
         
         if sender == leftSlider {
             leftLabel.text = "0"
@@ -64,11 +69,19 @@ class DuneBuggyVC: UIViewController, CBCentralManagerDelegate, CBPeripheralDeleg
     }
     
     func sliderValueChanged(sender:UISlider) {
+        if let characteristic = blackWidowCharWrite {
+            var motorValue:UInt8 = UInt8(leftSlider.value)
+            let motorBytes = NSData(bytes: &motorValue, length: sizeof(UInt8))
+            blackWidow.writeValue(motorBytes, forCharacteristic: characteristic, type: .WithResponse)
+        }
+        
         if sender == leftSlider {
             leftLabel.text = String(format: "%.0f", round(sender.value))
         } else if sender == rightSlider {
             rightLabel.text = String(format: "%.0f", round(sender.value))
         }
+        
+        
     }
     
     //MARK: Scanning
@@ -166,6 +179,7 @@ class DuneBuggyVC: UIViewController, CBCentralManagerDelegate, CBPeripheralDeleg
                 var motorValue:UInt8 = UInt8(leftSlider.value)
                 let motorBytes = NSData(bytes: &motorValue, length: sizeof(UInt8))
                 blackWidow.writeValue(motorBytes, forCharacteristic: characteristic, type: .WithResponse)
+                blackWidowCharWrite = characteristic
             }
         }
         
